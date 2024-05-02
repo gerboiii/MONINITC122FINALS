@@ -1,0 +1,419 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    scroll-behavior: smooth;
+    color: var(--textcolor);
+}
+
+:root {
+    --bgcolor: white;
+    --textcolor: #333;
+    --maincolor: #64D4F2;
+    --whitecolor: #fff;
+    --blackcolor: #000;
+    --shadowcolor: rgba(0,0,0,.2);
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    background: var(--bgcolor);
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+  }
+/* header */
+#nav {
+    height: 140px;
+    width: 100%;
+    /* background: #fff; */
+    display: flex;
+    padding: 0 40px;
+    align-items: center;
+    justify-content: space-between;
+    overflow-x: hidden;
+}
+
+#nav-2 {
+    display: flex;
+    /* background: blue; */
+    width: 45%;
+    margin-right: 70px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#nav img {
+    width: 7rem;
+    cursor: pointer;
+}
+
+#nav-2 img {
+    width: 11rem;
+}
+
+#nav i {
+    font-size: 25px;
+    cursor: pointer;
+    padding: 10px;
+    margin-bottom: 10px;
+    transition: 250ms ease-in;
+    border-radius: 25%;
+}
+
+#nav i:hover {
+    background-color: #0e3959;
+    color: var(--whitecolor);
+}
+
+#nav span {
+    display: flex;
+    width: 15px;
+    height: 15px;
+    background-color: red;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    border-radius: 50%;
+    position: absolute;
+    top: 68px;
+    right: 62px;
+    font-size: 10px;
+    font-weight: 700;
+}
+
+#nav h5 {
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: capitalize;
+    cursor: pointer;
+    padding: 0 10px;
+    transition: 0.4s ease;
+}
+
+#nav h5:hover {
+    color: var(--whitecolor);
+}
+
+#line {
+    width: 70px;
+    height: 2px;
+    background: var(--blackcolor);
+}
+
+
+/* footer */
+#footer-container {
+    width: 100%;
+    height: 50vh;
+    background-color: var(--blackcolor);
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    border-top-left-radius: 100px;
+    border-top-right-radius: 100px;
+}
+
+#footer-logo img {
+    width: 15rem;
+    margin-top: -100px;
+}
+
+#footer-menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#footer-menu h5 {
+    margin: 0 50px;
+    margin-bottom: 30px;
+    font-weight: 600;
+    transition: color 0.4s ease;
+}
+
+#footer-menu h5:hover {
+    color: var(--maincolor);
+}
+
+#socmed {
+    margin-bottom: 20px;
+}
+
+#socmed i {
+    font-size: 1.5rem;
+    margin: 0 40px;
+    transition: color 0.4s ease;
+}
+
+#socmed i:hover {
+    color: var(--maincolor);
+}
+
+/* hidden animations */
+.hidden {
+    opacity: 0;   
+    filter: blur(5px);
+    transition: all 0.5s ease-in;
+    transform: translateY(20%);
+}
+
+.show {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0);
+}
+
+/* contact us section */
+.contactUs {
+    position: relative;
+    width: 100%;
+    padding: 0 150px;
+    padding-bottom: 40px;
+}
+
+.contactUs .title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+}
+
+.contactUs .title h2 {
+    color: #0e3959;
+    font-weight: 600;
+}
+
+.form {
+    grid-area: form;
+}
+
+.info {
+    grid-area: info;
+}
+
+.map {
+    grid-area: map;
+}
+
+.contact {
+    padding: 40px;
+    background: var(--whitecolor);
+    box-shadow: 0 5px 35px rgba(0, 0, 0, 0.15);
+}
+
+.box {
+    position: relative;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 5fr 4fr;
+    grid-template-areas: 
+    "form info" "form map";
+    grid-gap: 20px;
+    margin-top: 20px;
+    padding-bottom: 40px;
+}
+
+.contact h3 {
+    color: #0e3959;
+    font-weight: 500;
+    font-size: 1.4em;
+    margin-bottom: 20px;
+}
+
+.formBox {
+    position: relative;
+    width: 100%;
+}
+
+.formBox .row50 {
+    display: flex;
+    gap: 20px;
+}
+
+.inputBox {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+    width: 50%;
+}
+
+.formBox .row100 .inputBox {
+    width: 100%;
+}
+
+.inputBox span {
+    color: var(--maincolor);
+    margin-top: 10px;
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+.inputBox input, textarea {
+    padding: 10px;
+    font-size: 1.1em;
+    outline: none;
+    border: 1px solid #333;
+}
+
+.inputBox textarea {
+    resize: none;
+    min-height: 220px;
+    margin-bottom: 10px;
+}
+
+.inputBox input[type="submit"] {
+    background: #0e3959;
+    color: var(--whitecolor);
+    border: none;
+    font-size: 1.1em;
+    max-width: 120px;
+    font-weight: 500;
+    cursor: pointer;
+    padding: 14px 15px;
+}
+
+.inputBox::placeholder {
+    color: #999;
+}
+
+.info {
+    background-color:#0e3959;
+}
+
+.info h3 {
+    color: var(--whitecolor);
+}
+
+.info .infoBox div {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.info .infoBox div span {
+    min-width: 40px;
+    height: 40px;
+    color: var(--whitecolor);
+    background: var(--maincolor);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5em;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+.info .infoBox div p, a {
+    color: var(--whitecolor);
+    font-size: 14px;
+}
+
+.sci {
+    margin-top: 40px;
+    display: flex;
+}
+
+.sci li {
+    list-style: none;
+    margin-right: 15px;
+}
+
+.sci li a i {
+    color: var(--whitecolor);
+    font-size: 2em;
+    color: #ccc;
+}
+
+.sci li a i:hover {
+    color: var(--whitecolor);
+}
+
+.map {
+    padding: 0;
+}
+
+.map iframe {
+    width: 100%;
+    height: 100%;
+}
+
+/* notification style */
+
+#toastBox {
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+    overflow: hidden;
+    padding: 20px;
+    z-index: 1500;
+}
+
+.toast {
+    width: 400px;
+    height: 80px;
+    background: #fff;
+    font-weight: 500;
+    margin: 15px 0;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    position: relative;
+    transform: translateX(100%);
+    animation: moveleft 0.4s linear forwards;
+}
+
+@keyframes moveleft {
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.toast i {
+    margin: 0 20px;
+    font-size: 35px;
+    color: green;
+}
+
+.toast.error i {
+    color: red;
+}
+
+.toast.invalid i {
+    color: orange;
+}
+
+.toast::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 5px;
+    background: green;
+    animation: anim 5s linear forwards;
+}
+
+.toast.error::after {
+    background: red;
+}
+
+.toast.invalid::after {
+    background: orange;
+}
+
+@keyframes anim {
+    100% {
+        width: 0;
+    }
+}

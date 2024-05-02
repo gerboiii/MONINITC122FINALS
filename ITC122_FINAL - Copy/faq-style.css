@@ -1,0 +1,246 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    scroll-behavior: smooth;
+    color: var(--textcolor);
+}
+
+:root {
+    --bgcolor: white;
+    --textcolor: #333;
+    --maincolor: #64D4F2;
+    --whitecolor: #fff;
+    --blackcolor: #000;
+    --shadowcolor: rgba(0,0,0,.2);
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(to top, #e2e2e2, #c9edff);
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+  }
+/* header */
+#nav {
+    height: 140px;
+    width: 100%;
+    /* background: #fff; */
+    display: flex;
+    padding: 0 40px;
+    align-items: center;
+    justify-content: space-between;
+    overflow-x: hidden;
+}
+
+#nav-2 {
+    display: flex;
+    /* background: blue; */
+    width: 45%;
+    margin-right: 70px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#nav img {
+    width: 7rem;
+    cursor: pointer;
+}
+
+#nav-2 img {
+    width: 11rem;
+}
+
+#nav i {
+    font-size: 25px;
+    cursor: pointer;
+    padding: 10px;
+    margin-bottom: 10px;
+    transition: 250ms ease-in;
+    border-radius: 25%;
+}
+
+#nav i:hover {
+    background-color: #0e3959;
+    color: var(--whitecolor);
+}
+
+#nav span {
+    display: flex;
+    width: 15px;
+    height: 15px;
+    background-color: red;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    border-radius: 50%;
+    position: absolute;
+    top: 68px;
+    right: 62px;
+    font-size: 10px;
+    font-weight: 700;
+}
+
+#nav h5 {
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: capitalize;
+    cursor: pointer;
+    padding: 0 10px;
+    transition: 0.4s ease;
+}
+
+#nav h5:hover {
+    color: var(--whitecolor);
+}
+
+#line {
+    width: 70px;
+    height: 2px;
+    background: var(--blackcolor);
+}
+
+
+/* footer */
+#footer-container {
+    width: 100%;
+    height: 50vh;
+    background-color: var(--blackcolor);
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    border-top-left-radius: 100px;
+    border-top-right-radius: 100px;
+}
+
+#footer-logo img {
+    width: 15rem;
+    margin-top: -100px;
+}
+
+#footer-menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#footer-menu h5 {
+    margin: 0 50px;
+    margin-bottom: 30px;
+    font-weight: 600;
+    transition: color 0.4s ease;
+}
+
+#footer-menu h5:hover {
+    color: var(--maincolor);
+}
+
+#socmed {
+    margin-bottom: 20px;
+}
+
+#socmed i {
+    font-size: 1.5rem;
+    margin: 0 40px;
+    transition: color 0.4s ease;
+}
+
+#socmed i:hover {
+    color: var(--maincolor);
+}
+
+/* hidden animations */
+.hidden {
+    opacity: 0;   
+    filter: blur(5px);
+    transition: all 0.5s ease-in;
+    transform: translateY(20%);
+}
+
+.show {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0);
+}
+
+
+
+/* FAQ container */
+#faq-container {
+    height: calc(100% - 140px);
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding-top: 500px;
+    padding-bottom: 450px;
+}
+
+.faq-banner h1{
+    font-size: 2.5rem;
+    font-weight: 700;
+    padding: 20px;
+    margin-top: -120px;
+    /* left: 45.5%; */
+    color: #0e3959;
+}
+
+.question {
+    width: 850px;
+    height: auto;
+    /* margin: 180px auto; */
+}
+
+.question li {
+    list-style: none;
+    width: 100%;
+    margin: 20px;
+    padding: 10px;
+    border-radius: 10px;
+    background: white;
+    box-shadow: 6px 6px 10px -1px rgba(0,0,0,0.15), 
+    -6px -6px 10px -1px rgba(255,255,255,0.7) ;
+}
+
+.question li label {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+label::before {
+    content: '?';
+    margin-right: 10px;
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--maincolor);
+}
+
+input[type="radio"] {
+    display: none;
+    
+}
+
+.question .content {
+    padding: 0 10px;
+    line-height: 26px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s, padding 0.5s;
+}
+
+.question input[type="radio"]:checked + label + .content {
+    max-height: 400px;
+    padding: 10px 10px 20px;
+}

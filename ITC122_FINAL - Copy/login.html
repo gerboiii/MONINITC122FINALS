@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>AquaCask | Login</title>
+    <link rel="icon" type="image/x-icon" href="logo-bnw.png">
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' href='login-style.css'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Concert+One&family=Molle&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+</head>
+<body>
+    <!-- navbar header -->
+<header>
+    <section id="nav">
+        <a href="index.html"><img src="logo-bnw.png"></a>
+        <div id="nav-2">
+            <a href="index.html"><h5>Home</h5></a>
+            <a href="store.html"><h5>Store</h5></a>
+            <a href="about.html"><h5>About</h5></a>
+            <div id="line"></div>
+            <a href="index.html"><img src="name-logo-black.png" alt=""></a>
+            <div id="line"></div>
+            <a href="faq.html"><h5>FAQ</h5></a>
+            <a href="contact.html"><h5>Contact</h5></a>
+            <a href="login.html"><h5>Login</h5></a>
+        </div>
+        <a onclick="showToast(loginMsg)"><i class='bx bx-cart' ></i></a>
+        <!-- <span>0</span> -->
+    </section>
+</header>   
+    <!-- login section -->
+    <section id="login-section">
+        <!-- <div class="mid"></div> -->
+        <div class="login-container" id="login-container">
+            <div class="form-container sign-up">
+                <form>
+                    <h1>Create Account</h1>
+                    <div class="social-icons">
+                        <a href="#" class="icon"><i class='bx bxl-google' ></i></a>
+                        <a href="#" class="icon"><i class='bx bxl-facebook' ></i></a>
+                        <a href="#" class="icon"><i class='bx bxl-apple' ></i></a>
+                    </div>
+                    <span>or use your email for registration</span>
+                    <input type="text" placeholder="Name" required>
+                    <input type="email" placeholder="Email" required>
+                    <input type="password" placeholder="Password" required>
+                    <button><a href="logged-home.html">Sign Up</a></button>
+                </form>
+            </div>
+            <div class="form-container sign-in">
+                <form>
+                    <h1>Sign In</h1>
+                    <div class="social-icons">
+                        <a href="#" class="icon"><i class='bx bxl-google' ></i></a>
+                        <a href="#" class="icon"><i class='bx bxl-facebook' ></i></a>
+                        <a href="#" class="icon"><i class='bx bxl-apple' ></i></a>
+                    </div>
+                    <span>or use your email and password</span>
+                    <input type="email" placeholder="Email" required>
+                    <input type="password" placeholder="Password" required>
+                    <a href="#">Forget Your Password?</a>
+                    <button><a href="logged-home.html">Sign In</a></button>
+                </form>
+            </div>
+            <div class="toggle-container">
+                <div class="toggle">
+                    <div class="toggle-panel toggle-left">
+                        <h1>Welcome Back!</h1>
+                        <p>Enter your personal details to use all of site features</p>  
+                        <button class="hidden" id="login">Sign In</button>
+                    </div>
+                    <div class="toggle-panel toggle-right">
+                        <h1>Hello, Brodie!</h1>
+                        <p>Register with your personal details to use all of site features</p>  
+                        <button class="hidden" id="register">Sign Up</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>  
+
+<footer>
+        <div id="footer-container">
+            <div id="footer-logo">
+                <img src="name-logo-white.png">
+            </div>
+            <div id="footer-menu">
+            <a href="index.html"><h5>Home</h5></a>
+            <a href="store.html"><h5>Store</h5></a>
+            <a href="about.html"><h5>About</h5></a>
+            <a href="faq.html"><h5>FAQ</h5></a>
+            <a href="contact.html"><h5>Contact</h5></a>
+            <a href="login.html"><h5>Login</h5></a>
+            </div>
+            <div id="socmed">
+                <a href="https://www.facebook.com/AquaFlaskPhOfficial"><i class='bx bxl-facebook' ></i></a>
+                <a href="https://www.instagram.com/aquaflask.ph/"><i class='bx bxl-instagram' ></i></a>
+                <a href="https://www.tiktok.com/@aquaflask.ph"><i class='bx bxl-tiktok' ></i></a>
+            </div>
+            <div id="footer-text">
+                <p>All Rights Reserved &#169; 2024 Gerry Monin Jr. | 23-01489</p>
+            </div>
+        </div>
+</footer>
+<div id="toastBox"></div>
+<script src="login.js"></script>
+<!-- notification js -->
+<script>
+
+    let toastBox = document.getElementById('toastBox');
+    let refreshMsg = '<i class="bx bxs-check-circle" ></i> Please Refresh Page for Confirmation';
+    let loginMsg = '<i class="bx bxs-user-account" ></i> Please Login to Gain Access';
+    let errorMsg = 'error';
+
+
+
+    function showToast(msg) {
+        let toast = document.createElement('div');
+        toast.classList.add('toast');
+        toast.innerHTML = msg;
+        toastBox.appendChild(toast);
+
+        if(msg.includes("error")) {
+            toast.classList.add('error');
+        };
+
+        if(msg.includes('Login')) {
+            toast.classList.add('invalid');
+        };
+
+        setTimeout(() => {
+            toast.remove();
+        }, 5000);
+    };
+</script>
+</body>
+</html>
